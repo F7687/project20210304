@@ -64,7 +64,7 @@ export default {
 					name: '网路视频'
 				},
 				{
-					path: 'warehouseManagement',
+					path: 'warehouseManagement-index',
 					imgSrc: require('../assets/img/Warehouse_management.png'),
 					name: '库室管理'
 				},
