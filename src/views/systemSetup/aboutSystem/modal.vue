@@ -8,7 +8,7 @@
 						<span>{{modalConfig.content}}</span>
 						<div class="one_btns">
                      <span @click.stop="handleSubmit">确定</span>
-                     <span @click.stop="handleCancel">取消</span>
+                     <span v-if="modalConfig.isShowCancel" @click.stop="handleCancel">取消</span>
                   </div>
 					</div>
 				</div>
