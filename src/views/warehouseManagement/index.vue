@@ -152,6 +152,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
 .content{
    display:flex;
    height: 349px;

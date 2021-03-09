@@ -2,7 +2,7 @@
 	<div class="home">
 		<div id="nav">
 			<div class="nav_left">
-				<div>
+				<div @click="$router.push({name:'keyManagement'})">
 					<span class="n_icon icon_temperature"></span>
 					温度：-26.6°C
 				</div>
@@ -84,7 +84,7 @@ export default {
 					name: '环境检测'
 				},
 				{
-					path: 'systemSetup',
+					path: 'systemSetup-aboutSystem',
 					imgSrc: require('../assets/img/System_setup.png'),
 					name: '系统设置'
 				},

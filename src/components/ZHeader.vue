@@ -63,7 +63,7 @@
       margin-left: 14.5px;
       margin-top: 8px;
       
-      z-index: 9;
+      z-index: 1;
       
    }
    .active{

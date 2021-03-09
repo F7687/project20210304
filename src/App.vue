@@ -16,6 +16,7 @@ export default {
 }
 </script>
 <style lang="less">
+@import './assets/css/common.css';
 body,
 html {
 	margin: 0;

@@ -1,6 +1,6 @@
 <template>
    <div class="z_left">
-      <span :class="{active:item.checked}" v-for="item in Data" :key="item.id">{{item.name}}</span>
+      <span @click="handleClick(item.id)" :class="{active:item.checked}" v-for="item in Data" :key="item.id">{{item.name}}</span>
    </div>
 </template>
 
@@ -18,7 +18,9 @@ export default {
    mounted(){
    },
    methods:{
-      
+      handleClick(id){
+          this.$emit('leftClick',id)
+      }
    }
 }
 </script>

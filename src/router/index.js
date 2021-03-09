@@ -20,10 +20,20 @@ const logManagement = () => import('../views/logManagement/index.vue');
 const environmentalMonitoring = () => import('../views/environmentalMonitoring/index.vue');
 // 系统设置
 const systemSetup = () => import('../views/systemSetup/index.vue');
+// 系统设置-关于系统
+const systemSetupAboutSystem = () => import('../views/systemSetup/aboutSystem/index.vue');
+// 系统设置-时间设置
+const systemSetupTimeSetting = () => import('../views/systemSetup/timeSetting/index.vue');
+// 系统设置-密码设置
+const systemSetupPasswordSetting = () => import('../views/systemSetup/passwordSetting/index.vue');
+// 系统设置-延时设置
+const systemSetupDelaySetting = () => import('../views/systemSetup/delaySetting/index.vue');
+
+// 钥匙管理
+const keyManagement = () => import('../views/keyManagement/index.vue');
 
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     name: "Home",
     component: Home,
@@ -37,7 +47,7 @@ const routes = [
     component: netVideo,
     meta: {
       keepAlive: false,
-      title:'网路视频'
+      title: '网路视频'
     }
   },
   {
@@ -46,16 +56,15 @@ const routes = [
     component: warehouseManagement,
     meta: {
       keepAlive: false,
-      title:'库室管理'
+      title: '库室管理'
     },
-    children:[
-      {
+    children: [{
         path: "/warehouseManagement/index",
         name: "warehouseManagement-index",
         component: warehouseManagementIndex,
         meta: {
           keepAlive: false,
-          title:'库室管理'
+          title: '库室管理'
         },
       },
       {
@@ -64,7 +73,7 @@ const routes = [
         component: warehouseManagementViewGunCabinet,
         meta: {
           keepAlive: false,
-          title:'库室管理'
+          title: '库室管理'
         },
       },
     ]
@@ -75,7 +84,7 @@ const routes = [
     component: peopleManagement,
     meta: {
       keepAlive: false,
-      title:'人员管理'
+      title: '人员管理'
     }
   },
   {
@@ -84,7 +93,7 @@ const routes = [
     component: logManagement,
     meta: {
       keepAlive: false,
-      title:'日志管理'
+      title: '日志管理'
     }
   },
   {
@@ -93,7 +102,7 @@ const routes = [
     component: environmentalMonitoring,
     meta: {
       keepAlive: false,
-      title:'环境监测'
+      title: '环境监测'
     }
   },
   {
@@ -102,7 +111,57 @@ const routes = [
     component: systemSetup,
     meta: {
       keepAlive: false,
-      title:'系统管理'
+      title: '系统设置'
+    },
+    children: [
+      {
+        path: "/systemSetup/aboutSystem",
+        name: "systemSetup-aboutSystem",
+        component: systemSetupAboutSystem,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 时间设置
+        path: "/systemSetup/timeSetting",
+        name: "systemSetup-timeSetting",
+        component: systemSetupTimeSetting,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 密码设置
+        path: "/systemSetup/passwordSetting",
+        name: "systemSetup-passwordSetting",
+        component: systemSetupPasswordSetting,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 延时设置
+        path: "/systemSetup/delaySetting",
+        name: "systemSetup-delaySetting",
+        component: systemSetupDelaySetting,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+    ]
+  },
+  {
+    path: "/keyManagement",
+    name: "keyManagement",
+    component: keyManagement,
+    meta: {
+      keepAlive: false,
+      title: '钥匙管理'
     }
   },
 ];
