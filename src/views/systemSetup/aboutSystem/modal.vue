@@ -25,7 +25,9 @@
          modalConfig:{
             type:Object,
             default:()=>{
-               return {}
+               return {
+                  isShowCancel:true
+               }
             }
             
          }

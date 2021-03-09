@@ -66,13 +66,15 @@ export default {
 			
          if(key==3){
             if(this.modalConfig.isShowCancel==false){
-               this.modalConfig.isRestore = false;
+					this.modalConfig.isRestore = false;
+					return
             }
             this.modalConfig.content='正在更新系统：80%'
             setTimeout(() => {
-               this.modalConfig.isShowCancel=false;
+					this.modalConfig.isShowCancel=false;
+					this.modalConfig.content='系统更新完成，请重启设备'
                // this.modalConfig.isRestore = false;
-            }, 3000);
+            }, 2000);
             return
          }
          this.modalConfig.isRestore = false;
@@ -82,7 +84,8 @@ export default {
 		},
 		handleRestore () {
          this.modalConfig={
-            isRestore:false,
+				isRestore:false,
+				isShowCancel:true,
 				title: '恢复设置',
             key:1,
 				content: '是否确定恢复设置？'
@@ -92,7 +95,8 @@ export default {
 
 		handleReboot () {
          this.modalConfig={
-            isRestore:false,
+				isRestore:false,
+				isShowCancel:true,
 				title: '重启设备',
             key:2,
 				content: '是否确定重启设备？'
@@ -101,7 +105,8 @@ export default {
 		},
 		checkUpdates () {
          this.modalConfig={
-            isRestore:false,
+				isRestore:false,
+				isShowCancel:true,
 				title: '检查更新',
             key:3,
 				content: '正在检查更新，请稍后...'
@@ -114,7 +119,8 @@ export default {
 		},
 		handleDebugging () {
          this.modalConfig={
-            isRestore:false,
+				isRestore:false,
+				isShowCancel:true,
 				title: '恢复设置',
             key:4,
 				content: '是否确定恢复设置？'

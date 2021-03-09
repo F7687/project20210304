@@ -3,45 +3,45 @@
      <div class="main_center">
          <div class="c_item">
              <div class="img_box">
-                 <img src="../../../assets/img/guns_in1.png" />
+                 <img src="../../../assets/img/zd.png" />
              </div>
-             <span class="fot">01-在位</span>
+             <span class="fot">01弹仓</span>
          </div>
          <div class="c_item">
              <div class="img_box">
-                 <img src="../../../assets/img/guns_out2.png" />
+                 <img src="../../../assets/img/zd.png" />
              </div>
-             <span class="fot guns_out">02-不在位</span>
+             <span class="fot ">01弹仓</span>
          </div>
          <div class="c_item c_item_active">
              <div class="img_box">
-                 <img src="../../../assets/img/guns_in1.png" />
+                 <img src="../../../assets/img/zd.png" />
              </div>
-             <span class="fot">03-在位</span>
+             <span class="fot">01弹仓</span>
          </div>
          <div class="c_item">
              <div class="img_box">
-                 <img src="../../../assets/img/guns_in1.png" />
+                 <img src="../../../assets/img/zd.png" />
              </div>
-             <span class="fot">04-在位</span>
+             <span class="fot">01弹仓</span>
          </div>
          <div class="c_item">
              <div class="img_box">
-                 <img src="../../../assets/img/guns_in2.png" />
+                 <img src="../../../assets/img/zd.png" />
              </div>
-             <span class="fot">05-在位</span>
+             <span class="fot">01弹仓</span>
          </div>
          <div class="c_item">
              <div class="img_box">
-                 <img src="../../../assets/img/guns_out1.png" />
+                 <img src="../../../assets/img/zd.png" />
              </div>
-             <span class="fot guns_out">06-不在位</span>
+             <span class="fot ">01弹仓</span>
          </div>
          <div class="c_item">
              <div class="img_box">
-                 <img src="../../../assets/img/guns_in1.png" />
+                 <img src="../../../assets/img/zd.png" />
              </div>
-             <span class="fot">01-在位</span>
+             <span class="fot">01弹仓</span>
          </div>
      </div>
      <div class="action">
@@ -59,9 +59,9 @@
               <span @click="$router.go(-1)">返回上级</span>
            </div>
            <div class="action_tips">
-              <span>姓名：</span>
-              <span>编号：</span>
-              <span>不在位：30</span>
+              <span>总容量：1000</span>
+              <span>在位：200</span>
+              <span>不在位：800</span>
               <span>柜体编号：HNZK2020220</span>
            </div>
         </div>
@@ -131,10 +131,7 @@ export default {
                 background: #1e4d1f;
 
             }
-            .guns_out{
-                background: #154816;
-                color: #777;
-            }
+            
         }
         .c_item_active{
             border: 1px solid #74f214;

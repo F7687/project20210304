@@ -23,7 +23,7 @@
       methods:{
          handleClick(){
             
-            this.$router.go(-1)
+            this.$router.replace({name:'Home'})
             // let routers=['netVideo','warehouseManagement','peopleManagement','logManagement','environmentalMonitoring','systemSetup']
             // if(routers.includes(this.$route.name)){
             //    return this.$router({name:'Home'})

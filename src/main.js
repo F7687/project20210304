@@ -3,9 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { Button } from 'vant';
-import { Switch,Checkbox,CheckboxGroup,Overlay  } from 'vant';
+import { Switch,Checkbox,CheckboxGroup,Overlay,Field   } from 'vant';
 Vue.config.productionTip = false;
-Vue.use(Button).use(Switch).use(Checkbox).use(CheckboxGroup).use(Overlay);
+Vue.use(Button).use(Switch).use(Checkbox).use(CheckboxGroup).use(Overlay).use(Field);
 new Vue({
   router,
   store,

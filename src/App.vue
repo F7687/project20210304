@@ -21,6 +21,10 @@ body,
 html {
 	margin: 0;
 	padding: 0;
+	color: #ccc;
+}
+/deep/.van-checkbox__label{
+	color: #ccc;
 }
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -29,7 +33,7 @@ html {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	color: #f4f8f4;
+	color: #ccc;
 	font-size: 14px;
 	box-sizing: border-box;
 

@@ -2,7 +2,7 @@
    <div>
       <z-header></z-header>
      <div class="content">
-        <z-left :Data="Data"></z-left>
+        <z-left @leftClick="leftClick" :Data="Data"></z-left>
         <router-view ></router-view>
         <!-- <div class="box">
            <div class="c_box">
@@ -106,31 +106,37 @@ export default {
             {
                id:1,
                name:'01机械库',
+               path:'warehouseManagement-index',
                checked:true,
             },
             {
                id:2,
                name:'01弹药库',
+               path:'warehouseManagement-ammunitionDepot',
                checked:false,
             },
             {
                id:3,
                name:'02枪械库',
+               path:'warehouseManagement-index',
                checked:false,
             },
             {
                id:4,
                name:'02弹药库',
+               path:'warehouseManagement-ammunitionDepot',
                checked:false,
             },
             {
                id:5,
                name:'03枪械库',
+               path:'warehouseManagement-index',
                checked:false,
             },
             {
                id:6,
                name:'03弹药库',
+               path:'warehouseManagement-ammunitionDepot',
                checked:false,
             },
          ],
@@ -146,7 +152,15 @@ export default {
    mounted(){
    },
    methods:{
-      
+      leftClick(id){
+         for(let i=0;i<this.Data.length;i++){
+            if(id==this.Data[i].id&&this.Data[i].checked)return
+            if(id==this.Data[i].id){
+               this.Data[i].checked=true;
+               this.$router.push({name:this.Data[i].path})
+            }else this.Data[i].checked=false;
+         }
+      }
    }
 }
 </script>
@@ -163,7 +177,7 @@ export default {
   
 }
 /deep/.van-checkbox__label{
-         color:#fff;
+         color:#ccc;
          font-size: 19px;
       }
 </style>

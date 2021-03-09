@@ -12,6 +12,9 @@ const netVideo = () => import('../views/netVideo/index.vue');
 const warehouseManagement = () => import('../views/warehouseManagement/index.vue');
 const warehouseManagementIndex = () => import('../views/warehouseManagement/index/index.vue');
 const warehouseManagementViewGunCabinet = () => import('../views/warehouseManagement/viewGunCabinet/index.vue');
+const warehouseManagementAmmunitionDepot = () => import('../views/warehouseManagement/ammunitionDepot/index.vue');
+const warehouseManagementViewBulletCabinet = () => import('../views/warehouseManagement/viewBulletCabinet/index.vue');
+
 // 人员管理
 const peopleManagement = () => import('../views/peopleManagement/index.vue');
 // 日志管理
@@ -29,8 +32,11 @@ const systemSetupPasswordSetting = () => import('../views/systemSetup/passwordSe
 // 系统设置-延时设置
 const systemSetupDelaySetting = () => import('../views/systemSetup/delaySetting/index.vue');
 
-// 钥匙管理
+// 钥匙管理 
 const keyManagement = () => import('../views/keyManagement/index.vue');
+// 选择验证方式
+const keyManagementVerification = () => import('../views/keyManagement/verification/index.vue');
+const verification = () => import('../views/verification/index.vue');
 
 
 const routes = [{
@@ -76,6 +82,24 @@ const routes = [{
           title: '库室管理'
         },
       },
+      { //弹药库
+        path: "/warehouseManagement/ammunitionDepot",
+        name: "warehouseManagement-ammunitionDepot",
+        component: warehouseManagementAmmunitionDepot,
+        meta: {
+          keepAlive: false,
+          title: '库室管理'
+        },
+      },
+      {
+        path: "/warehouseManagement/viewBulletCabinet",
+        name: "warehouseManagement-viewBulletCabinet",
+        component: warehouseManagementViewBulletCabinet,
+        meta: {
+          keepAlive: false,
+          title: '库室管理'
+        },
+      },
     ]
   },
   {
@@ -113,8 +137,7 @@ const routes = [{
       keepAlive: false,
       title: '系统设置'
     },
-    children: [
-      {
+    children: [{
         path: "/systemSetup/aboutSystem",
         name: "systemSetup-aboutSystem",
         component: systemSetupAboutSystem,
@@ -163,6 +186,24 @@ const routes = [{
       keepAlive: false,
       title: '钥匙管理'
     }
+  },
+  {
+    path: "/keyManagement/verification",
+    name: "keyManagement-verification",
+    component: keyManagementVerification,
+    meta: {
+      keepAlive: false,
+      title: '选择验证方式'
+    },
+  },
+  {
+    path: "/verification",
+    name: "verification",
+    component: verification,
+    meta: {
+      keepAlive: false,
+      title: '选择验证方式'
+    },
   },
 ];
 

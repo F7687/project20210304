@@ -3,7 +3,7 @@
            <div class="c_box">
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Bullet_cabinet_icon.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -12,7 +12,7 @@
            </div>
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Bullet_cabinet_icon.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -21,7 +21,7 @@
            </div>
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Bullet_cabinet_icon.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -32,7 +32,7 @@
          <div class="c_box">
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Bullet_cabinet_icon.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -41,7 +41,7 @@
            </div>
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Bullet_cabinet_icon.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -50,7 +50,7 @@
            </div>
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Bullet_cabinet_icon.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -69,7 +69,7 @@
            </div>
            <div class="action_btns">
               <span>打开枪柜</span>
-              <span @click="viewGunCabinet">查看枪柜</span>
+              <span @click="viewBulletCabinet">查看弹柜</span>
               <span>一键开启</span>
            </div>
            <div class="action_tips">
@@ -136,9 +136,8 @@ export default {
    mounted(){
    },
    methods:{
-      viewGunCabinet(){
-          console.log('viewGunCabinet')
-          this.$router.push({name:'warehouseManagement-viewGunCabinet'})
+      viewBulletCabinet(){
+          this.$router.push({name:'warehouseManagement-viewBulletCabinet'})
         //   this.$router.push({path: '/login?url=' + this.$route.path});
       }
    }
@@ -171,7 +170,7 @@ export default {
             text-align:center;
             // padding:1px 0;
             img{
-               width:43.5px;
+               width:67px;
                height:56px;
             }
          }
@@ -220,7 +219,7 @@ export default {
             height:38px;
             line-height:38px;
             text-align:center;
-            color:#ccc;
+            color:#fff;
             font-size:18px;
             margin-left:13px;
          }
@@ -248,6 +247,7 @@ export default {
    }
    }
 /deep/.van-checkbox__label{
+         color:#ccc;
          font-size: 19px;
       }
 </style>
