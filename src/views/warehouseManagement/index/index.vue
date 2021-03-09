@@ -1,14 +1,9 @@
 <template>
-   <div>
-      <z-header></z-header>
-     <div class="content">
-        <z-left :Data="Data"></z-left>
-        <router-view ></router-view>
-        <!-- <div class="box">
+        <div class="box">
            <div class="c_box">
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Gun_Cabinet.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -17,7 +12,7 @@
            </div>
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Gun_Cabinet.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -26,7 +21,7 @@
            </div>
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Gun_Cabinet.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -37,7 +32,7 @@
          <div class="c_box">
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Gun_Cabinet.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -46,7 +41,7 @@
            </div>
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Gun_Cabinet.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -55,7 +50,7 @@
            </div>
            <div class="box_item">
               <div class="item_img">
-                 <img src="../../assets/img/Gun_Cabinet.png">
+                 <img src="../../../assets/img/Gun_Cabinet.png">
               </div>
               <div class="item_check">
                  <span></span>
@@ -74,7 +69,7 @@
            </div>
            <div class="action_btns">
               <span>打开枪柜</span>
-              <span>查看枪柜</span>
+              <span @click="viewGunCabinet">查看枪柜</span>
               <span>一键开启</span>
            </div>
            <div class="action_tips">
@@ -85,20 +80,15 @@
            </div>
         </div>
 
-        </div> -->
+        </div>
         
-     </div>
      
-   </div>
 </template>
 
 <script>
-import zHeader from "@/components/ZHeader.vue";
-import ZLeft from "@/components/ZLeft.vue";
 export default {
-   name:'environmentalMonitoring',
+//    name:'environmentalMonitoring',
    components:{
-      zHeader,ZLeft
    },
    data(){
       return {
@@ -146,21 +136,118 @@ export default {
    mounted(){
    },
    methods:{
-      
+      viewGunCabinet(){
+          console.log('viewGunCabinet')
+          this.$router.push({name:'warehouseManagement-viewGunCabinet'})
+        //   this.$router.push({path: '/login?url=' + this.$route.path});
+      }
    }
 }
 </script>
 
 <style lang="less" scoped>
-.content{
-   display:flex;
-   height: 349px;
-   margin: 0;
-   padding: 0px 10px;
-   background-image: url('../../assets/img/Bottom_Plate.png');
-   background-size: 100% 100%;
-  
-}
+   
+   .box{
+      padding-top:28px;
+      padding-left: 7px;
+      margin-right: 7px;
+      .c_box{
+      display:flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom:10px;
+      // padding-left:48px;
+      // padding-right:48px;
+      
+      flex-wrap: wrap;
+      .box_item{
+         display:inline-block;
+         width:106px;
+         height:87px;
+         border:1px solid #EEEEEE;
+         padding-bottom:0.5px;
+         .item_img{
+            height:58px;
+            text-align:center;
+            // padding:1px 0;
+            img{
+               width:43.5px;
+               height:56px;
+            }
+         }
+         .item_check{
+            background-color:#1C481A;
+            height:28px;
+            line-height:28px;
+            text-align:center;
+            padding-left:9px;
+            /deep/.van-checkbox__icon{
+               height:28px;
+            }
+            /deep/.van-checkbox__icon .van-icon{
+               width:28px;
+               height:28px;
+               line-height:28px;
+            }
+            /deep/.van-checkbox{
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               height: 100%;
+            }
+            /deep/.van-checkbox__label{
+               color:#fff;
+               font-size: 15px;
+            }
+         }
+      }
+   }
+   .action{
+      
+      width:100%;
+      border-top:1px dashed #ccc;
+      padding-top:9px;
+      .action_checkbox{
+         display:flex;
+      justify-content: space-around;
+      }
+      .action_btns{
+         width:100%;
+         padding:9px 37px;
+         padding-left:33px;
+         span{
+            display:inline-block;
+            width:142px;
+            height:38px;
+            line-height:38px;
+            text-align:center;
+            color:#fff;
+            font-size:18px;
+            margin-left:13px;
+         }
+         :nth-child(1){
+            background-color:#1e722e;
+            margin-left:0;
+         }
+         :nth-child(2){
+            background-color:#2c78a7;
+         }
+         :nth-child(3){
+            background-color:#d38b42;
+         }
+      }
+      .action_tips{
+         display:flex;
+         justify-content: space-between;
+         height:28px;
+         line-height:25px;
+         padding:0 8px;
+         
+         border-top:1px solid #2e770f;
+         
+      }
+   }
+   }
 /deep/.van-checkbox__label{
          color:#fff;
          font-size: 19px;

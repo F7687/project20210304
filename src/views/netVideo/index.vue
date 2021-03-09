@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import zHeader from "@/components/header.vue";
+import zHeader from "@/components/ZHeader.vue";
 export default {
    name:'environmentalMonitoring',
    components:{

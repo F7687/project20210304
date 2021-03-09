@@ -10,6 +10,8 @@ const Home = () => import('../views/Home.vue');
 const netVideo = () => import('../views/netVideo/index.vue');
 // 库室管理
 const warehouseManagement = () => import('../views/warehouseManagement/index.vue');
+const warehouseManagementIndex = () => import('../views/warehouseManagement/index/index.vue');
+const warehouseManagementViewGunCabinet = () => import('../views/warehouseManagement/viewGunCabinet/index.vue');
 // 人员管理
 const peopleManagement = () => import('../views/peopleManagement/index.vue');
 // 日志管理
@@ -45,7 +47,27 @@ const routes = [
     meta: {
       keepAlive: false,
       title:'库室管理'
-    }
+    },
+    children:[
+      {
+        path: "/warehouseManagement/index",
+        name: "warehouseManagement-index",
+        component: warehouseManagementIndex,
+        meta: {
+          keepAlive: false,
+          title:'库室管理'
+        },
+      },
+      {
+        path: "/warehouseManagement/viewGunCabinet",
+        name: "warehouseManagement-viewGunCabinet",
+        component: warehouseManagementViewGunCabinet,
+        meta: {
+          keepAlive: false,
+          title:'库室管理'
+        },
+      },
+    ]
   },
   {
     path: "/peopleManagement",
