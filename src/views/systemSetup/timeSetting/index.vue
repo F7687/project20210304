@@ -43,7 +43,7 @@
      
    .footer{
       position: absolute;
-      bottom: 45px;
+      bottom: 32px;
       left: calc(50% - 108px);
       text-align: center;
       span{

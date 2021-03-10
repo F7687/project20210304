@@ -134,10 +134,11 @@ export default {
 <style lang="less" scoped>
 .main {
 	padding: 0 60px;
-	height: 100%;
+	height: 310px;
+	box-sizing: border-box;
 	margin-top: 15px;
 	.main_box {
-		padding-bottom: 140px;
+		padding-bottom: 130px;
 		.m_item {
 			font-size: 15px;
 			height: 42.5px;
