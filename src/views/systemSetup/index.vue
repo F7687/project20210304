@@ -22,10 +22,47 @@ export default {
       return {
          Data:[
             {
+               id:20,
+               name:'基本信息',
+               path:'systemSetup-baseInfo',
+               checked:true,
+            },
+            {
+               id:21,
+               name:'网路设置',
+               path:'systemSetup-netSetting',
+               checked:false,
+            },
+            {
+               id:22,
+               name:'库室设置',
+               path:'systemSetup-warehouseSetting',
+               checked:false,
+            },
+            {
+               id:23,
+               name:'报警设置',
+               path:'systemSetup-callPoliceSetting',
+               checked:false,
+            },
+            {
+               id:24,
+               name:'环境设置',
+               path:'systemSetup-environmentSetting',
+               checked:false,
+            },
+            {
+               id:25,
+               name:'验证设置',
+               path:'systemSetup-verifySettings',
+               checked:false,
+            },
+            // -----------
+            {
                id:1,
                name:'延时设置',
                path:'systemSetup-delaySetting',
-               checked:true,
+               checked:false,
             },
             {
                id:2,
@@ -45,49 +82,7 @@ export default {
                path:'systemSetup-aboutSystem',
                checked:false,
             },
-            // --------------
-           {
-               id:5,
-               name:'关于系统',
-               path:'systemSetup-aboutSystem',
-               checked:false,
-            },
-            {
-               id:6,
-               name:'关于系统',
-               path:'systemSetup-aboutSystem',
-               checked:false,
-            },
-            {
-               id:7,
-               name:'关于系统',
-               path:'systemSetup-aboutSystem',
-               checked:false,
-            },
-            {
-               id:8,
-               name:'关于系统',
-               path:'systemSetup-aboutSystem',
-               checked:false,
-            },
-            {
-               id:9,
-               name:'关于系统',
-               path:'systemSetup-aboutSystem',
-               checked:false,
-            },
-            {
-               id:10,
-               name:'关于系统',
-               path:'systemSetup-aboutSystem',
-               checked:false,
-            },
-            {
-               id:11,
-               name:'关于系统',
-               path:'systemSetup-aboutSystem',
-               checked:false,
-            },
+           
          ],
 
       }

@@ -23,15 +23,30 @@ const peopleManagementInputFace = () => import('../views/peopleManagement/inputF
 const peopleManagementInputFingerprint = () => import('../views/peopleManagement/inputFingerprint/index.vue');
 // 录入密码
 const peopleManagementInputPwd = () => import('../views/peopleManagement/inputPwd/index.vue');
-
 /* 人员管理*/
 
-// 日志管理
+/* 日志管理*/
 const logManagement = () => import('../views/logManagement/index.vue');
+const logManagementLogDetail= () => import('../views/logManagement/logDetail/index.vue');
+/* 日志管理*/
+
 // 环境检测
 const environmentalMonitoring = () => import('../views/environmentalMonitoring/index.vue');
+
 // 系统设置
 const systemSetup = () => import('../views/systemSetup/index.vue');
+// 系统设置-基本信息
+const systemSetupBaseInfo = () => import('../views/systemSetup/baseInfo/index.vue');
+// 系统设置-网络设置
+const systemSetupNetSetting = () => import('../views/systemSetup/netSetting/index.vue');
+// 系统设置-库室设置
+const systemSetupWarehouseSetting = () => import('../views/systemSetup/warehouseSetting/index.vue');
+// 系统设置-报警设置
+const systemSetupCallPoliceSetting = () => import('../views/systemSetup/callPoliceSetting/index.vue');
+// 系统设置-环境设置
+const systemSetupEnvironmentSetting = () => import('../views/systemSetup/environmentSetting/index.vue');
+// 系统设置-验证设置
+const systemSetupVerifySettings = () => import('../views/systemSetup/verifySettings/index.vue');
 // 系统设置-关于系统
 const systemSetupAboutSystem = () => import('../views/systemSetup/aboutSystem/index.vue');
 // 系统设置-时间设置
@@ -162,6 +177,15 @@ const routes = [{
     }
   },
   {
+    path: "/logManagement/logDetail",
+    name: "logManagement-logDetail",
+    component: logManagementLogDetail,
+    meta: {
+      keepAlive: false,
+      title: '日志详情'
+    }
+  },
+  {
     path: "/environmentalMonitoring",
     name: "environmentalMonitoring",
     component: environmentalMonitoring,
@@ -182,6 +206,66 @@ const routes = [{
         path: "/systemSetup/aboutSystem",
         name: "systemSetup-aboutSystem",
         component: systemSetupAboutSystem,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 基本信息
+        path: "/systemSetup/baseInfo",
+        name: "systemSetup-baseInfo",
+        component: systemSetupBaseInfo,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 网络设置
+        path: "/systemSetup/netSetting",
+        name: "systemSetup-netSetting",
+        component: systemSetupNetSetting,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 库室设置
+        path: "/systemSetup/warehouseSetting",
+        name: "systemSetup-warehouseSetting",
+        component: systemSetupWarehouseSetting,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 报警设置 
+        path: "/systemSetup/callPoliceSetting",
+        name: "systemSetup-callPoliceSetting",
+        component: systemSetupCallPoliceSetting,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 环境设置 
+        path: "/systemSetup/environmentSetting",
+        name: "systemSetup-environmentSetting",
+        component: systemSetupEnvironmentSetting,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 验证设置 
+        path: "/systemSetup/verifySettings",
+        name: "systemSetup-verifySettings",
+        component: systemSetupVerifySettings,
         meta: {
           keepAlive: false,
           title: '系统设置'

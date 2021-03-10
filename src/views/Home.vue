@@ -84,7 +84,7 @@ export default {
 					name: '环境检测'
 				},
 				{
-					path: 'systemSetup-aboutSystem',
+					path: 'systemSetup-baseInfo',
 					imgSrc: require('../assets/img/System_setup.png'),
 					name: '系统设置'
 				},

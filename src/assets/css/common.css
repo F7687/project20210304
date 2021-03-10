@@ -12,3 +12,13 @@
   background-size: 100% 100%;
   text-align: center;
 }
+.left_btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 93px;
+  height: 30px;
+  line-height: 30px;
+  background-image: url('../img/Storeroom_Checked.png');
+  background-size: 100% 100%;
+}
