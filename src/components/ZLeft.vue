@@ -28,7 +28,7 @@ export default {
 <style lang="less" scoped>
 .z_left{
     
-    width: 117px;
+    width: 95px;
     height: 329px;
     overflow-y: auto;
     box-sizing: border-box;
