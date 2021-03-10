@@ -45,7 +45,49 @@ export default {
                path:'systemSetup-aboutSystem',
                checked:false,
             },
-           
+            // --------------
+           {
+               id:5,
+               name:'关于系统',
+               path:'systemSetup-aboutSystem',
+               checked:false,
+            },
+            {
+               id:6,
+               name:'关于系统',
+               path:'systemSetup-aboutSystem',
+               checked:false,
+            },
+            {
+               id:7,
+               name:'关于系统',
+               path:'systemSetup-aboutSystem',
+               checked:false,
+            },
+            {
+               id:8,
+               name:'关于系统',
+               path:'systemSetup-aboutSystem',
+               checked:false,
+            },
+            {
+               id:9,
+               name:'关于系统',
+               path:'systemSetup-aboutSystem',
+               checked:false,
+            },
+            {
+               id:10,
+               name:'关于系统',
+               path:'systemSetup-aboutSystem',
+               checked:false,
+            },
+            {
+               id:11,
+               name:'关于系统',
+               path:'systemSetup-aboutSystem',
+               checked:false,
+            },
          ],
 
       }
@@ -68,12 +110,15 @@ export default {
 
 <style lang="less" scoped>
 .content{
+   // background-color: red;
    display:flex;
    height: 349px;
+   width: 640px;
+   box-sizing: border-box;
    margin: 0;
-   padding: 0px 10px;
+   padding: 10px 10px;
    background-image: url('../../assets/img/Bottom_Plate.png');
    background-size: 100% 100%;
-  
+   overflow: hidden;
 }
 </style>

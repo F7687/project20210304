@@ -15,8 +15,17 @@ const warehouseManagementViewGunCabinet = () => import('../views/warehouseManage
 const warehouseManagementAmmunitionDepot = () => import('../views/warehouseManagement/ammunitionDepot/index.vue');
 const warehouseManagementViewBulletCabinet = () => import('../views/warehouseManagement/viewBulletCabinet/index.vue');
 
-// 人员管理
+/* 人员管理*/
 const peopleManagement = () => import('../views/peopleManagement/index.vue');
+// 录入人脸
+const peopleManagementInputFace = () => import('../views/peopleManagement/inputFace/index.vue');
+// 录入指纹
+const peopleManagementInputFingerprint = () => import('../views/peopleManagement/inputFingerprint/index.vue');
+// 录入密码
+const peopleManagementInputPwd = () => import('../views/peopleManagement/inputPwd/index.vue');
+
+/* 人员管理*/
+
 // 日志管理
 const logManagement = () => import('../views/logManagement/index.vue');
 // 环境检测
@@ -36,7 +45,12 @@ const systemSetupDelaySetting = () => import('../views/systemSetup/delaySetting/
 const keyManagement = () => import('../views/keyManagement/index.vue');
 // 选择验证方式
 const keyManagementVerification = () => import('../views/keyManagement/verification/index.vue');
-const verification = () => import('../views/verification/index.vue');
+const keyManagementMultiFace = () => import('../views/keyManagement/multiFace/index.vue');
+const keyManagementMultiFaceFingerprint = () => import('../views/keyManagement/multiFaceFingerprint/index.vue');
+const keyManagementFacePwd = () => import('../views/keyManagement/facePwd/index.vue');
+const keyManagementFingerprintPwd = () => import('../views/keyManagement/fingerprintPwd/index.vue');
+const keyManagementDynamicPwd = () => import('../views/keyManagement/dynamicPwd/index.vue');
+const keyManagementVerifyIdentidy = () => import('../views/keyManagement/verifyIdentidy/index.vue');
 
 
 const routes = [{
@@ -110,6 +124,33 @@ const routes = [{
       keepAlive: false,
       title: '人员管理'
     }
+  },
+  {
+    path: "/peopleManagement/inputFace",
+    name: "peopleManagement-inputFace",
+    component: peopleManagementInputFace,
+    meta: {
+      keepAlive: false,
+      title: '录入人脸管理'
+    },
+  },
+  {
+    path: "/peopleManagement/inputFingerprint",
+    name: "peopleManagement-inputFingerprint",
+    component: peopleManagementInputFingerprint,
+    meta: {
+      keepAlive: false,
+      title: '录入指纹管理'
+    },
+  },
+  {
+    path: "/peopleManagement/inputPwd",
+    name: "peopleManagement-inputPwd",
+    component: peopleManagementInputPwd,
+    meta: {
+      keepAlive: false,
+      title: '录入密码管理'
+    },
   },
   {
     path: "/logManagement",
@@ -197,12 +238,57 @@ const routes = [{
     },
   },
   {
-    path: "/verification",
-    name: "verification",
-    component: verification,
+    path: "/verification/multiFace",
+    name: "keyManagement-multiFace",
+    component: keyManagementMultiFace,
     meta: {
       keepAlive: false,
-      title: '选择验证方式'
+      title: '多人人脸验证'
+    },
+  },
+  {
+    path: "/verification/multiFaceFingerprint",
+    name: "keyManagement-multiFaceFingerprint",
+    component: keyManagementMultiFaceFingerprint,
+    meta: {
+      keepAlive: false,
+      title: '人脸+指纹验证'
+    },
+  },
+  {
+    path: "/verification/facePwd",
+    name: "keyManagement-facePwd",
+    component: keyManagementFacePwd,
+    meta: {
+      keepAlive: false,
+      title: '人脸+密码验证'
+    },
+  },
+  {
+    path: "/verification/fingerprintPwd",
+    name: "keyManagement-fingerprintPwd",
+    component: keyManagementFingerprintPwd,
+    meta: {
+      keepAlive: false,
+      title: '指纹+密码验证'
+    },
+  },
+  {
+    path: "/verification/dynamicPwd",
+    name: "keyManagement-dynamicPwd",
+    component: keyManagementDynamicPwd,
+    meta: {
+      keepAlive: false,
+      title: '动态密码'
+    },
+  },
+  {
+    path: "/verification/verifyIdentidy",
+    name: "keyManagement-verifyIdentidy",
+    component: keyManagementVerifyIdentidy,
+    meta: {
+      keepAlive: false,
+      title: '请验证管理员身份信息'
     },
   },
 ];

@@ -2,21 +2,40 @@
 	<div>
 		<z-header></z-header>
       <div class="main">
-         <div class="m_item">
+         <!-- 多人人脸验证 -->
+         <router-link :to="{name:'keyManagement-multiFace',query:{name:'keyManagement-verification'}}">
+         <div class="m_item" >
             <img src="../../../assets/img/Verification1.png" alt="">
          </div>
+         </router-link>
+         <!-- 多人人脸验证 -->
+
+         <!-- 人脸+指纹验证 -->
+         <router-link :to="{name:'keyManagement-multiFaceFingerprint',query:{name:'keyManagement-verification'}}">
          <div class="m_item">
             <img src="../../../assets/img/Verification2.png" alt="">
 
          </div>
+         </router-link>
+         <!-- 人脸+指纹验证 -->
+
+         <!-- 人脸+密码验证 -->
+         <router-link :to="{name:'keyManagement-facePwd',query:{name:'keyManagement-verification'}}">
          <div class="m_item">
             <img src="../../../assets/img/Verification3.png" alt="">
 
          </div>
+         </router-link>
+         <!-- 人脸+密码验证 -->
+
+         <!-- 指纹+密码验证 -->
+         <router-link :to="{name:'keyManagement-fingerprintPwd',query:{name:'keyManagement-verification'}}">
          <div class="m_item m_item_active">
             <img src="../../../assets/img/Verification4.png" alt="">
 
          </div>
+         </router-link>
+         <!-- 指纹+密码验证 -->
       </div>
 	</div>
 </template>

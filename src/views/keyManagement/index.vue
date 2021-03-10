@@ -3,17 +3,18 @@
 		<z-header></z-header>
 		<div class="main">
 			<div class="m_box">
-				<router-link :to="{name:'keyManagement-verification'}">
+				<router-link :to="{name:'keyManagement-verification',query:{name:'keyManagement'}}">
 					<span>
 						<strong>1</strong>
 						打开上层
 					</span>
 				</router-link>
-
+				<router-link :to="{name:'keyManagement-dynamicPwd',query:{name:'keyManagement'}}">
 				<span>
 					<strong>2</strong>
 					打开下层
 				</span>
+				</router-link>
 			</div>
 		</div>
 	</div>
@@ -44,7 +45,7 @@ export default {
 		background-color: #0a3b0b;
 		padding-top: 6px;
 		a{
-			color: #ccc;
+			color: #fff;
 		}
 		span {
 			display: block;

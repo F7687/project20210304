@@ -6,6 +6,7 @@
          @mouseup="handleUp"   
          :class="{'back_icon':true,'active':isAvtive}"></div>
       <strong>{{this.$route.meta.title}}</strong>
+      <slot></slot>
    </div>
 </template>
 
@@ -14,16 +15,19 @@
       name:'header',
       data() {
          return {
-            isAvtive: false
+            isAvtive: false,
+            routerName:''
          }
       },
       mounted(){
          console.log(this.$route);
+         this.routerName= this.$route.query.name||undefined
       },
       methods:{
          handleClick(){
-            
-            this.$router.replace({name:'Home'})
+            if(this.routerName){
+               this.$router.push({name:this.routerName})
+            }else this.$router.replace({name:'Home'})
             // let routers=['netVideo','warehouseManagement','peopleManagement','logManagement','environmentalMonitoring','systemSetup']
             // if(routers.includes(this.$route.name)){
             //    return this.$router({name:'Home'})

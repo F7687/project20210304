@@ -21,8 +21,9 @@ body,
 html {
 	margin: 0;
 	padding: 0;
-	color: #ccc;
+	color: #fff;
 }
+
 /deep/.van-checkbox__label{
 	color: #ccc;
 }
@@ -33,7 +34,7 @@ html {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	color: #ccc;
+	color: #fff;
 	font-size: 14px;
 	box-sizing: border-box;
 

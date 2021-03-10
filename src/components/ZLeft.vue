@@ -27,10 +27,12 @@ export default {
 
 <style lang="less" scoped>
 .z_left{
-    width:93px;
-    height:100%;
     
-    padding:10px 0;
+    width: 117px;
+    height: 329px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    // margin:10px 0;
     .active{
         background-image: url('../assets/img/Storeroom_Checked.png');
         background-size:100% 100%;
