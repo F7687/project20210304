@@ -14,48 +14,75 @@
 
 				<!-- 列表数据 -->
 				<div class="m_body">
-					<van-row v-if="false" class="m_tb m_tb_content" type="flex" justify="center">
-					<van-col span="5">001</van-col>
-					<van-col span="5">测试名称</van-col>
-					<van-col span="5">Id001</van-col>
-					<van-col span="5">Stirng</van-col>
-					<van-col span="4"></van-col>
-				</van-row>
-				<van-row v-else style="textAlign:left;text-indent: 1em;" class="m_tb m_tb_content" type="flex" >
-					未添加库室信息。
-				</van-row>
-				
+					<div v-if="dataSource.length!=0">
+						<van-row @click="selectedData(item.id)" v-for="item in dataSource" :key="item.id" class="m_tb m_tb_content" type="flex" justify="center">
+						<van-col span="5">{{item.code}}</van-col>
+						<van-col span="5">{{item.name}}</van-col>
+						<van-col span="5">{{item.cardId}}</van-col>
+						<van-col span="5">{{item.type}}</van-col>
+						<van-col span="4" style="display:flex;justify-content: center;">
+							<van-checkbox shape="square" v-model="item.checked" checked-color="#278218"></van-checkbox>
+
+						</van-col>
+					</van-row>
+					</div>
+					
+					<van-row v-else style="textAlign:left;text-indent: 1em;" class="m_tb m_tb_content" type="flex">
+						未添加库室信息。
+					</van-row>
+
 				</div>
-				
+
 				<!-- 列表数据 -->
 			</div>
 
 			<!-- 底部按钮 -->
 			<div class="footer_action">
-				<span>添加库室</span>
+				<span @click="openAddModal">添加库室</span>
 				<span>编辑库室</span>
 				<span>删除库室</span>
-				<span>查看库室</span>
+				<span @click="viewCation">查看库室</span>
 				<span>保存库室</span>
 			</div>
 			<!-- 底部按钮 -->
 
-			<!-- 保存成功弹框 -->
-			<van-overlay :show="isShowModal" @click.stop="isShowModal=false">
+			<!-- 添加弹框 -->
+			<van-overlay :show="isAddModal" @click.stop="isAddModal=false">
 				<div class="one_wrapper" @click.stop>
 					<div class="block">
-						<div class="one_title">保存设置</div>
+						<div class="one_title">添加库室</div>
 						<div class="one_content">
-							<span>保存成功！</span>
+							<div class="form_box">
+								<div class="f_item">
+									<span>库室编号</span>
+									<input type="text">
+								</div>
+								<div class="f_item">
+									<span>库室名称</span>
+									<input type="text">
+								</div>
+								<div class="f_item">
+									<span>设&nbsp;备&nbsp;ID</span>
+									<input type="text">
+								</div>
+								<div class="f_item">
+									<span>库室类型</span>
+									<div style="display:flex;width: 240px;justify-content: space-between;">
+										<van-checkbox shape="square" v-model="checked" checked-color="#278218">枪室</van-checkbox>
+									<van-checkbox shape="square" checked-color="#278218">弹库</van-checkbox>
+									<van-checkbox shape="square" checked-color="#278218">枪室</van-checkbox>
+									</div>
+								</div>
+							</div>
 							<div class="one_btns">
-								<span @click="isShowModal=false">确定</span>
-								<!-- <span @click="isShowModal=false">取消</span> -->
+								<span @click="isAddModal=false">确定</span>
+								<span @click="isAddModal=false">取消</span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</van-overlay>
-			<!-- 保存成功弹框 -->
+			<!-- 添加弹框 -->
 
 			<!-- <z-modal @handleSubmit="handleSubmit" @handleCancel="handleCancel"  :modalConfig="modalConfig"></z-modal> -->
 		</div>
@@ -72,7 +99,12 @@ export default {
 	},
 	data () {
 		return {
-			isShowModal: false,
+			isAddModal: false,
+			checked:true,
+			// 数据源
+			dataSource:[
+				
+			]
 			// 重置弹框配置
 			// modalConfig:{
 			//    isRestore:false,
@@ -84,50 +116,82 @@ export default {
 		}
 	},
 	methods: {
-		// 保存按钮
-		save () {
-			this.isShowModal = true;
+		// 打开添加柜体弹框
+		openAddModal () {
+			this.dataSource=[
+				{
+					id:'1',
+					code:'12345678',
+					name:'01军械库',
+					cardId:'1',
+					type:'枪库',
+					checked:false
+				},
+				{
+					id:'2',
+					code:'12345678',
+					name:'02弹药库',
+					cardId:'1',
+					type:'弹库',
+					checked:true
+				},
+			]
+			this.isAddModal = true
 		},
-		// 打开重置弹框
-		openResetModal () {
-			this.modalConfig.isRestore = true;
+		// 选择
+		selectedData(id){
+			for(let i=0;i<this.dataSource.length;i++){
+				let item=this.dataSource[i];
+				if(item.id===id){
+					item.checked=true;
+				}else item.checked=false;
+			}
 		},
-		handleSubmit () {
-			this.modalConfig.isRestore = false;
+		// 跳转查看柜体
+		viewCation(){
+			let data=this.dataSource.filter(item=>item.checked)[0];
+			// 判断是跳转枪库还是跳转弹库
+			if(data.type=='枪库'){
+				this.$router.push({
+				name:'systemSetup-viewCabinet',
+				query:{name:'systemSetup-warehouseSetting'}
+			})
+			}else {
+				this.$router.push({name:'systemSetup-viewMagazine'})
+			}
+			
 		},
-		handleCancel () {
-			this.modalConfig.isRestore = false;
-		}
+		
 
 	},
 }
 </script>
 
 <style lang="less" scoped>
+/deep/.van-checkbox__label{
+	color:#fff;
+}
 .main {
 	padding: 0 15px;
 	height: 310px;
 	box-sizing: border-box;
 	// margin-top: 15px;
 	.main_box {
-		
 		// padding-top: 10px;
-		.m_body{
+		.m_body {
 			height: 245px;
 			overflow-y: auto;
-			.m_tb_content{
-			border-bottom: 1px solid #41a20a;
+			.m_tb_content {
+				border-bottom: 1px solid #41a20a;
+			}
 		}
-		}
-		.m_tb{
+		.m_tb {
 			height: 40px;
 			line-height: 40px;
 			text-align: center;
 		}
 		.m_header {
-			
 		}
-		
 	}
 	.footer_action {
 		display: flex;
@@ -155,8 +219,8 @@ export default {
 	justify-content: center;
 	height: 100%;
 	.block {
-		width: 298px;
-		height: 162px;
+		width: 410px;
+		height: 279.5px;
 		background-color: #256028;
 		box-sizing: border-box;
 		border: 1px solid #52b816;
@@ -167,11 +231,31 @@ export default {
 			border-bottom: 1px solid #52b816;
 		}
 		.one_content {
-			padding-top: 25px;
+			padding-top: 5px;
+			padding: 8px 50px 10px 50px;
 			text-align: center;
+			.form_box{
+				.f_item{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					margin-bottom: 16px;
+					span{
+						// width: 100px;
+					}
+					input{
+						width: 236px;
+						height: 28px;
+						border: 1px solid #618963;
+						line-height: 28px;
+						text-indent: .5em;
+						background-color: #256028;
+						
+					}
+				}
+			}
 			.one_btns {
-				padding: 20px 0;
-				margin-top: 10px;
+				// padding: 20px 0;
 				span {
 					display: inline-block;
 					width: 121px;
@@ -184,7 +268,7 @@ export default {
 					margin-left: 16px;
 				}
 				:first-child {
-					background-color: #2b7fad;
+					background-color: #268118;
 				}
 			}
 		}

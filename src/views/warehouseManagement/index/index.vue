@@ -137,7 +137,6 @@ export default {
    },
    methods:{
       viewGunCabinet(){
-          console.log('viewGunCabinet')
           this.$router.push({name:'warehouseManagement-viewGunCabinet'})
         //   this.$router.push({path: '/login?url=' + this.$route.path});
       }

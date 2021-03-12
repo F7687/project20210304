@@ -39,8 +39,19 @@ const systemSetup = () => import('../views/systemSetup/index.vue');
 const systemSetupBaseInfo = () => import('../views/systemSetup/baseInfo/index.vue');
 // 系统设置-网络设置
 const systemSetupNetSetting = () => import('../views/systemSetup/netSetting/index.vue');
-// 系统设置-库室设置
+// 系统设置-库室设置 
 const systemSetupWarehouseSetting = () => import('../views/systemSetup/warehouseSetting/index.vue');
+// 系统设置-库室设置 -查看柜体
+const systemSetupViewCabinet= () => import('../views/systemSetup/viewCabinet/index.vue');
+// 系统设置-库室设置 -查看枪支柜体
+const systemSetupViewGunCabinet= () => import('../views/systemSetup/viewGunCabinet/index.vue');
+// 系统设置-库室设置 -查看弹库
+const systemSetupViewMagazine= () => import('../views/systemSetup/viewMagazine/index.vue');
+// 系统设置-库室设置 -查看弹库柜
+const systemSetupViewMagazineCabinet= () => import('../views/systemSetup/viewMagazineCabinet/index.vue');
+// 系统设置-库室设置 -去皮校准
+const systemSetupTareCalibration= () => import('../views/systemSetup/tareCalibration/index.vue');
+
 // 系统设置-报警设置
 const systemSetupCallPoliceSetting = () => import('../views/systemSetup/callPoliceSetting/index.vue');
 // 系统设置-环境设置
@@ -232,7 +243,7 @@ const routes = [{
         },
       },
       {
-        // 库室设置
+        // 库室设置 
         path: "/systemSetup/warehouseSetting",
         name: "systemSetup-warehouseSetting",
         component: systemSetupWarehouseSetting,
@@ -241,6 +252,56 @@ const routes = [{
           title: '系统设置'
         },
       },
+      {
+        // 库室设置 -查看柜体
+        path: "/systemSetup/viewCabinet",
+        name: "systemSetup-viewCabinet",
+        component: systemSetupViewCabinet,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 库室设置 -查看枪支柜体
+        path: "/systemSetup/viewGunCabinet",
+        name: "systemSetup-viewGunCabinet",
+        component: systemSetupViewGunCabinet,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+			{
+        // 库室设置 -查看弹库
+        path: "/systemSetup/viewMagazine",
+        name: "systemSetup-viewMagazine",
+        component: systemSetupViewMagazine,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      },
+      {
+        // 库室设置 -查看弹仓
+        path: "/systemSetup/viewMagazineCabinet",
+        name: "systemSetup-viewMagazineCabinet",
+        component: systemSetupViewMagazineCabinet,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      }, 
+      {
+        // 库室设置 -去皮校准
+        path: "/systemSetup/tareCalibration",
+        name: "systemSetup-tareCalibration",
+        component: systemSetupTareCalibration,
+        meta: {
+          keepAlive: false,
+          title: '系统设置'
+        },
+      }, 
       {
         // 报警设置 
         path: "/systemSetup/callPoliceSetting",

@@ -1,7 +1,7 @@
 <template>
    <div>
-      <van-overlay :show="modalConfig.isRestore" @click.stop="modalConfig.isRestore=false">
-			<div class="one_wrapper" @click.stop>
+      <van-overlay :show="modalConfig.isRestore" @click.stop="cancel">
+			<div class="one_wrapper" >
 				<div class="block">
 					<div class="one_title">{{modalConfig.title}}</div>
 					<div class="one_content">
@@ -26,7 +26,11 @@
             type:Object,
             default:()=>{
                return {
-                  isShowCancel:true
+                  isRestore:false,//弹框显示/隐藏
+                  title:'',//弹框标题
+                  content:'',//弹框内容
+                  mask:false,//是否点击遮罩关闭弹框
+                  isShowCancel:true,//是否显示取消按钮
                }
             }
             
@@ -46,6 +50,12 @@
          },
          handleCancel(){
             this.$emit('handleCancel',this.modalConfig.key)
+         },
+         cancel(){
+            this.$emit('cancel')
+            if(!this.modalConfig.mask)return
+            this.modalConfig.isRestore=false;
+            
          }
       }
    }

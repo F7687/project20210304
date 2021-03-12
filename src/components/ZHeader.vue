@@ -12,7 +12,7 @@
 
 <script>
    export default {
-      name:'header',
+      name:'z-header',
       data() {
          return {
             isAvtive: false,
@@ -20,7 +20,6 @@
          }
       },
       mounted(){
-         console.log(this.$route);
          this.routerName= this.$route.query.name||undefined
       },
       methods:{
@@ -37,7 +36,6 @@
          handleDown(){
             
             this.isAvtive=true;
-            console.log('handleDown',this.isAvtive);
          },
          handleUp(){
             setTimeout(() => {

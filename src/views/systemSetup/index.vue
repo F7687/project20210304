@@ -1,6 +1,10 @@
 <template>
    <div>
-      <z-header></z-header>
+      <z-header>
+         <span class="left_btn" v-if="$route.name=='systemSetup-viewCabinet'||$route.name=='systemSetup-viewMagazine'" @click="sendMsg()">保存柜体</span>
+         <span class="left_btn" v-if="$route.name=='systemSetup-viewMagazineCabinet'" @click="sendMsg()">保存弹仓</span>
+         
+      </z-header>
       <div class="content">
          <z-left 
           @leftClick="leftClick"
@@ -13,6 +17,7 @@
 <script>
 import zHeader from "@/components/ZHeader.vue";
 import ZLeft from "@/components/ZLeft.vue";
+import { EventBus } from "@/utils/eventBus";
 export default {
    name:'environmentalMonitoring',
    components:{
@@ -98,6 +103,9 @@ export default {
                this.$router.push({name:this.Data[i].path})
             }else this.Data[i].checked=false;
          }
+      },
+      sendMsg(){
+          EventBus.$emit("leftBtnClick");
       }
    }
 }

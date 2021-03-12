@@ -53,8 +53,8 @@ export default {
 		return {
 			isRestore: false,
 			modalConfig: {
-            isRestore:false,
-            isShowCancel:true,
+            isRestore:false,//弹框显示/隐藏
+            isShowCancel:true,//是否显示取消按钮
 				title: '恢复设置',
             key:1,
 				content: '是否确定恢复设置？'

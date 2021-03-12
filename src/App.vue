@@ -25,7 +25,7 @@ html {
 }
 
 /deep/.van-checkbox__label{
-	color: #ccc;
+	color: #fff;
 }
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
