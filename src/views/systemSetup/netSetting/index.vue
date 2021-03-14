@@ -96,7 +96,7 @@ export default {
 	box-sizing: border-box;
 	// margin-top: 15px;
 	.main_box {
-      padding-bottom: 50px;
+      padding-bottom: 60px;
       padding-top: 10px;
 		.m_item {
 			font-size: 15px;

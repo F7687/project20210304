@@ -68,6 +68,6 @@
 }
 .footer{
       text-align: center;
-      padding-top: 52px;
+      padding-top: 60px;
    }
 </style>

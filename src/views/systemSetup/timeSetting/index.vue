@@ -7,11 +7,12 @@
          <div  class="m_item">
             当前时间：14:03:55 &nbsp;&nbsp;>
          </div>
-         <div class="footer">
+         
+      </div>
+      <div class="footer">
             <span>同步</span>
             <span>保存</span>
          </div>
-      </div>
    </div>
 </template>
 
@@ -41,10 +42,12 @@
       font-size: 15px;
    }
      
-   .footer{
+   
+}
+.footer{
       position: absolute;
-      bottom: 32px;
-      left: calc(50% - 108px);
+      bottom: 23px;
+      left: calc(50% - 75px);
       text-align: center;
       span{
          display: inline-block;
@@ -63,5 +66,4 @@
          margin-left: 15px;
       }
    }
-}
 </style>

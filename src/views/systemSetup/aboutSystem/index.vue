@@ -131,7 +131,7 @@ export default {
 	box-sizing: border-box;
 	margin-top: 15px;
 	.main_box {
-		padding-bottom: 130px;
+		padding-bottom: 140px;
 		.m_item {
 			font-size: 15px;
 			height: 42.5px;
