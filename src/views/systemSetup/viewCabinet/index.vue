@@ -328,7 +328,6 @@ export default {
 		// 添加柜体
 		addCabinet(){
 			for(let key in this.cabinetForm){
-				console.log('key',key)
 				this.cabinetForm[key]=''
 			}
 			this.cabinetForm.title="添加柜体"

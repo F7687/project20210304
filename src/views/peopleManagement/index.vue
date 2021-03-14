@@ -129,7 +129,6 @@ export default {
       },
       // 录入人脸
       inputFace(){
-         console.log('录入人脸');
          this.$router.push({name:'peopleManagement-inputFace',query:{name:'peopleManagement'}});
       },
       //录入指纹

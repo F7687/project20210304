@@ -11,14 +11,13 @@
 <script>
 export default {
 	mounted () {
-		// console.log('路由：', this.$route);
 	},
 }
 </script>
 <style lang="less">
 @import './assets/css/common.css';
 body,
-html {
+html,p {
 	margin: 0;
 	padding: 0;
 	color: #fff;

@@ -67,6 +67,14 @@ const systemSetupPasswordSetting = () => import('../views/systemSetup/passwordSe
 // 系统设置-延时设置
 const systemSetupDelaySetting = () => import('../views/systemSetup/delaySetting/index.vue');
 
+/* 系统调试 hardwareTest */  
+// 网络设置 systemDebugging-netSetting
+const systemDebugging=()=>import('../views/systemDebugging/index.vue');
+const systemDebuggingHardwareTest=()=>import('../views/systemDebugging/hardwareTest/index.vue');
+const systemDebuggingNetSetting=()=>import('../views/systemDebugging/netSetting/index.vue');
+
+/* 系统调试 */
+
 // 钥匙管理 
 const keyManagement = () => import('../views/keyManagement/index.vue');
 // 选择验证方式
@@ -436,6 +444,35 @@ const routes = [{
       title: '请验证管理员身份信息'
     },
   },
+  {
+    path: "/systemDebugging",
+    name: "systemDebugging",
+    component: systemDebugging,
+    meta: {
+      keepAlive: false,
+      title: '系统调试'
+    },
+    children:[
+      {
+        path: "/systemDebugging/netSetting",
+        name: "systemDebugging-netSetting",
+        component: systemDebuggingNetSetting,
+        meta: {
+          keepAlive: false,
+          title: '系统调试'
+        },
+      },
+      {
+        path: "/systemDebugging/hardwareTest",
+        name: "systemDebugging-hardwareTest",
+        component: systemDebuggingHardwareTest,
+        meta: {
+          keepAlive: false,
+          title: '系统调试'
+        },
+      },
+    ]
+  },
 ];
 
 const router = new VueRouter({
@@ -446,7 +483,6 @@ router.beforeEach((to, from, next) => {
   let toDepth = to.path.split('/').length
   let fromDepth = from.path.split('/').length
   if (toDepth < fromDepth) {
-    // console.log('back...')
     from.meta.keepAlive = false
     to.meta.keepAlive = true
   }

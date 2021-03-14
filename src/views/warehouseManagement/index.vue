@@ -3,7 +3,9 @@
       <z-header></z-header>
      <div class="content">
         <z-left @leftClick="leftClick" :Data="Data"></z-left>
-        <router-view ></router-view>
+        <div class="mybox">
+           <router-view ></router-view>
+        </div>
         <!-- <div class="box">
            <div class="c_box">
            <div class="box_item">
@@ -168,13 +170,15 @@ export default {
 <style lang="less" scoped>
 
 .content{
-   display:flex;
-   height: 349px;
-   margin: 0;
-   padding: 0px 10px;
-   background-image: url('../../assets/img/Bottom_Plate.png');
-   background-size: 100% 100%;
-  
+   display: flex;
+    height: 54.53125vw;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 10px;
+    background-image: url('../../assets/img/Bottom_Plate.png');
+    background-size: 100% 100%;
+    overflow: hidden;
 }
 /deep/.van-checkbox__label{
          color:#ccc;

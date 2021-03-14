@@ -147,7 +147,7 @@ export default {
 <style lang="less" scoped>
    
    .box{
-      padding-top:28px;
+      padding-top:12px;
       padding-left: 7px;
       margin-right: 7px;
       .c_box{

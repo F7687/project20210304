@@ -118,14 +118,7 @@ export default {
          
 		},
 		handleDebugging () {
-         this.modalConfig={
-				isRestore:false,
-				isShowCancel:true,
-				title: '恢复设置',
-            key:4,
-				content: '是否确定恢复设置？'
-         }
-			this.modalConfig.isRestore = true;
+         this.$router.push({name:'systemDebugging-netSetting',query:{name:'systemSetup-aboutSystem'}})
 		},
 	},
 }

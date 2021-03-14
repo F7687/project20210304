@@ -267,7 +267,6 @@ export default {
 	},
 
 	mounted () {
-		console.log('??/')
 		// 监听保存头部保存按钮事件
 		EventBus.$on("leftBtnClick", () => {
 			this.modalConfig={
@@ -328,9 +327,7 @@ export default {
 		},
 		// 添加柜体
 		addCabinet(){
-			console.log('this.cabinetForm',this.cabinetForm)
 			for(let key in this.cabinetForm){
-				console.log('key',key)
 				this.cabinetForm[key]=''
 			}
 			this.cabinetForm.title="添加柜体"
@@ -338,7 +335,6 @@ export default {
 		},
 		//编辑柜体
 		editCabinet(){
-			console.log('this.编辑柜体',this.cabinetForm)
 			this.cabinetForm={
 				title:'编辑柜体',
 				code:'12345678',
@@ -348,7 +344,7 @@ export default {
 			}
 			this.isAddModal=true
 		},
-		// 查看柜体
+		// 查看柜体hhhh4sfhhfsfhsdffdhshjnjmnnm 
 		viewCabint(){
 			this.$router.push({name:'systemSetup-viewMagazineCabinet'})
 		}

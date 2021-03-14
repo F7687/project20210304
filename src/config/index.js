@@ -16,5 +16,4 @@ const modeUrlObj = {
     authBaseURL: ""
   }
 };
-console.log('process:',process);
 export default modeUrlObj[process.env.NODE_ENV];

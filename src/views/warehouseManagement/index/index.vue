@@ -147,9 +147,9 @@ export default {
 <style lang="less" scoped>
    
    .box{
-      padding-top:28px;
-      padding-left: 7px;
-      margin-right: 7px;
+      padding-top:12px;
+      // padding-left: 7px;
+      // margin-right: 7px;
       .c_box{
       display:flex;
       justify-content: space-around;

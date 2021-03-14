@@ -99,12 +99,11 @@ export default {
 .main{
     
     width:520px;
-    padding:10px;
+    padding:10px 7px;
     padding-right:0;
     .main_center{
         display:flex;
         flex-wrap: wrap;
-        padding-top:7.5px;
         .c_item{
             margin:7.5px 0 7.5px 4px;
             border:1px solid #ccc;
